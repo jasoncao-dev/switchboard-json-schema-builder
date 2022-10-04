@@ -10,7 +10,7 @@ export type SchemaType =
 
 export type SchemaTypeOption = { value: SchemaType; label: string }
 
-export type CommonSchemaField = 'description'
+export type CommonSchemaField = 'description' | 'sensitive'
 
 export type StringSchemaField =
   | CommonSchemaField
@@ -38,14 +38,14 @@ export type ArraySchemaField =
   | 'maxItems'
 
 export type SchemaFieldOptionType =
-  | 'text'
+  | 'string'
   | 'number'
   | 'boolean'
   | 'multi_creatable'
   | 'select'
   | 'required'
 
-export type CommonValidSchemaField = CommonSchemaField | 'title' | 'type' 
+export type CommonValidSchemaField = CommonSchemaField | 'title' | 'type' | 'sensitive'
 export type StringValidSchemaField = StringSchemaField | CommonValidSchemaField
 export type NumberValidSchemaField = NumberSchemaField | CommonValidSchemaField
 export type IntegerValidSchemaField =

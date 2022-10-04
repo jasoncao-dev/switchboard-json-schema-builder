@@ -2,7 +2,7 @@ import React from 'react'
 
 const SchemaBox: React.FunctionComponent = ({children}) => {
   return(
-    <div className="w-full border-l border-b border-blue-400 pl-2 pb-2 pt-2 rounded-bl">
+    <div className="w-full border-dashed border-l border-b pl-6 pb-4 pt-4 rounded-bl space-x-4">
       {children}
     </div>
   )

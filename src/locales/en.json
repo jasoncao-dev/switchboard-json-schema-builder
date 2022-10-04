@@ -1,7 +1,7 @@
 {
     "type": "Type",
     "schemaTypes": {
-        "text": "Text",
+        "string": "String",
         "integer": "Integer",
         "decimal": "Decimal",
         "boolean": "Boolean",
@@ -28,12 +28,13 @@
         "uniqueItems": "Unique Items"
     },
     "description": "Description",
+    "sensitive": "Sensitive",
     "options": "Options",
     "noOptions": "No options",
     "pattern": "Pattern",
     "format": "Format",
     "title": "Title",
-    "key": "Key",
+    "key": "Name",
     "collapse": "Collapse schema",
     "extraOptions": "Open extra options menu",
     "delete": "Delete schema",

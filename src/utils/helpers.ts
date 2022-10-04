@@ -12,6 +12,10 @@ export const getSchemaType = getSchemaField('type')
 
 export const getSchemaTitle = getSchemaField('title')
 
+export const getSchemaDescription = getSchemaField('description')
+
+export const getSchemaSensitive = getSchemaField('sensitive')
+
 export const getSchemaProperty = (key: string) =>
   getSchemaField(['properties', key])
 
@@ -32,6 +36,10 @@ export const setSchemaField = _.set
 export const setSchemaType = setSchemaField('type')
 
 export const setSchemaTitle = setSchemaField('title')
+
+export const setSchemaDescription = setSchemaField('description')
+
+export const setSchemaSensitive = setSchemaField('sensitive')
 
 export const setSchemaProperties = setSchemaField('properties')
 

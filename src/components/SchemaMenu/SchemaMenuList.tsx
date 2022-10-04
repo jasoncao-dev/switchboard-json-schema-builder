@@ -17,7 +17,7 @@ const typeToItem: Record<
   SchemaFieldOptionType,
   React.FunctionComponent<any>
 > = {
-  text: (props) => <TextItem {...props} />,
+  string: (props) => <TextItem {...props} />,
   number: (props) => <NumberItem {...props} />,
   boolean: (props) => <BoolItem {...props} />,
   multi_creatable: (props) => <CreatableMultiSelectItem {...props} />,

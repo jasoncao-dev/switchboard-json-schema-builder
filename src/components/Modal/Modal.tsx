@@ -16,7 +16,7 @@ const Modal: React.FunctionComponent<Props> = ({
     <div>
       <div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
         <div className='relative w-auto my-6 mx-auto max-w-3xl'>
-          <div className='p-2 rounded shadow relative flex flex-col w-full bg-white outline-none focus:outline-none'>
+          <div className='p-4 rounded shadow relative flex flex-col w-full bg-white outline-none focus:outline-none'>
             <div className='flex items-end justify-between'>
               <h3 className='font-semibold text-xl'>{title}</h3>
               <CloseButton onClick={onClose} />

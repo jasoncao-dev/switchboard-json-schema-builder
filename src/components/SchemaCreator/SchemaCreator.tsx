@@ -30,7 +30,7 @@ const SchemaCreator: React.FunctionComponent<Props> = ({
   return (
     <div>
       <div className="flex items-end">
-        {isRequired && <FontAwesomeIcon icon={faAsterisk} className='mr-2 mb-3 text-xs' title={'Required'}/>}
+        {isRequired && <FontAwesomeIcon icon={faAsterisk} className='mr-2 mb-3 text-xs text-red-500' title={'Required'}/>}
         <SchemaControls
           schema={schema}
           schemakey={schemakey}
@@ -147,7 +147,7 @@ const SchemaObjectProperties: React.FunctionComponent<ObjectProps> = ({
 }: ObjectProps) => {
 
   return (
-    <ul className='grid gap-2 '>
+    <ul className='grid gap-3 '>
       {_.entries(helpers.getSchemaProperties(schema)).map(([key, s]) => (
         <li key={key}>
           <SchemaCreator

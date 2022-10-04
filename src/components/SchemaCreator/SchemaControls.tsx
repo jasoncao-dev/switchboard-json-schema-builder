@@ -36,18 +36,8 @@ export const SchemaControls: React.FunctionComponent<Props> = ({
   const {t} = useTranslation()
   return (
     <div className='flex flex-row items-end'>
-      <div className='grid grid-flow-col gap-2 mr-2'>
-        <Input
-          value={helpers.getSchemaTitle(schema)}
-          onChange={(title) => onChange(helpers.setSchemaTitle(title, schema))}
-          placeholder={t('title')}
-          label={t('title')}
-        />
-        <SchemaTypesSelect
-          type={helpers.getSchemaType(schema)}
-          onChange={(t) => onChange(helpers.setSchemaTypeAndRemoveWrongFields(t, schema))}
-        />
-        {_.isFunction(onChangeKey) ? (
+      <div className='grid grid-flow-col gap-4 mr-2'>
+      {_.isFunction(onChangeKey) ? (
           <Input
             value={schemakey}
             onChange={onChangeKey}
@@ -55,6 +45,29 @@ export const SchemaControls: React.FunctionComponent<Props> = ({
             label={t('key')}
           />
         ) : null}
+        {/* <Input
+          value={helpers.getSchemaTitle(schema)}
+          onChange={(title) => onChange(helpers.setSchemaTitle(title, schema))}
+          placeholder={t('title')}
+          label={t('title')}
+        /> */}
+        <SchemaTypesSelect
+          type={helpers.getSchemaType(schema)}
+          onChange={(t) => onChange(helpers.setSchemaTypeAndRemoveWrongFields(t, schema))}
+        />
+        <Input
+          value={helpers.getSchemaDescription(schema)}
+          onChange={(description) => onChange(helpers.setSchemaDescription(description, schema))}
+          placeholder={t('description')}
+          label={t('description')}
+        />
+        <Input
+          value={helpers.getSchemaSensitive(schema)}
+          onChange={(sensitive) => onChange(helpers.setSchemaSensitive(sensitive, schema))}
+          placeholder={t('sensitive')}
+          label={t('sensitive')}
+          disabled={helpers.getSchemaType(schema) !== 'string'}
+        />
       </div>
       <div className='grid grid-flow-col items-center gap-1'>
         {_.isFunction(onCollapse) ? (

@@ -25,7 +25,7 @@ const SchemaTypesSelect: React.FunctionComponent<Props> = ({
     <div>
       <Label>{t('type')}</Label>
       <Select
-        className=' min-w-48 max-w-lg w-full shadow rounded border-gray-300 bg-white focus:outline-none focus:shadow-outline-blue focus:border-blue-300'
+        className='mt-2 min-w-32 max-w-md w-full rounded bg-white focus:outline-none focus:shadow-outline-blue focus:ring-blue-500  focus:border-blue-500'
         options={options}
         value={helpers.findOption(type)(options)}
         onChange={(option: any) => onChange(option.value)}

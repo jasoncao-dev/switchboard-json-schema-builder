@@ -20,6 +20,7 @@ const Item: React.FunctionComponent<ItemProps> = ({
   children,
   onDelete
 }: ItemProps) => {
+  debugger
   return (
     <div className='flex items-end justify-between'>
       {children}

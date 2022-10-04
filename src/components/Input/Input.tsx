@@ -8,6 +8,7 @@ type Props = {
   value?: string
   label?: string
   type?: string
+  disabled?: boolean
 }
 
 const Input: React.FunctionComponent<Props> = ({
@@ -15,7 +16,8 @@ const Input: React.FunctionComponent<Props> = ({
   placeholder,
   value = '',
   label,
-  type = 'text'
+  type = 'text',
+  disabled
 }: Props) => {
   const [localVal, setLocalVal] = React.useState<string>('')
 
@@ -39,7 +41,8 @@ const Input: React.FunctionComponent<Props> = ({
         onKeyPress={handleEnterPress(onChangeValue)}
         onBlur={onChangeValue}
         placeholder={placeholder}
-        className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline-blue focus:border-blue-500'
+        className='mt-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline-blue focus:ring-blue-500  focus:border-blue-500'
+        disabled={disabled}
       />
     </div>
   )

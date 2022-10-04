@@ -27,7 +27,7 @@ export const defaultSchema: Schema = {
 export const schemaTypes: SchemaTypeOption[] = [
   {
     value: 'string',
-    label: 'schemaTypes.text',
+    label: 'schemaTypes.string',
   },
   {
     value: 'integer',
@@ -114,15 +114,16 @@ export const objectValidSchemaProperties: ObjectValidSchemaField[] = [
 ]
 
 const commonSchemaOptions: CommonSchemaFieldOption[] = [
-  { value: 'description', label: 'description', type: 'text' }
+  { value: 'description', label: 'description', type: 'string' },
 ]
 
 export const stringSchemaOptions: StringSchemaFieldOption[] = [
   ...commonSchemaOptions,
+  { value: 'sensitive', label: 'sensitive', type: 'string' },
   { value: 'minLength', label: 'requirement.minLength', type: 'number' },
   { value: 'maxLength', label: 'requirement.maxLength', type: 'number' },
   { value: 'enum', label: 'options', type: 'multi_creatable' },
-  { value: 'pattern', label: 'pattern', type: 'text' },
+  { value: 'pattern', label: 'pattern', type: 'string' },
   {
     value: 'format',
     label: 'format',
