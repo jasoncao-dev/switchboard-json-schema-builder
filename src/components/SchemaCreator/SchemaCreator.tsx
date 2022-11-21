@@ -6,7 +6,7 @@ import * as helpers from '../../utils/helpers'
 import { SchemaBox } from '../SchemaBox'
 import { SchemaControls, SchemaArrayControls } from './SchemaControls'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAsterisk } from '@fortawesome/free-solid-svg-icons'
+import { faAsterisk } from "@fortawesome/free-solid-svg-icons";
 
 type Props = {
   schema: Schema

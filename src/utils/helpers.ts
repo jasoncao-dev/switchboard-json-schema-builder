@@ -31,6 +31,12 @@ export const getSchemaRequiredProperties = (schema: Schema) => {
   return getSchemaFields(required, properties)
 }
 
+export const getSchemaSensitiveProperties = (schema: Schema) => {
+  const sensitive = getSchemaSensitive(schema)
+  const properties = getSchemaProperties(schema)
+  return getSchemaFields(sensitive, properties)
+}
+
 export const setSchemaField = _.set
 
 export const setSchemaType = setSchemaField('type')
@@ -134,6 +140,10 @@ export const removeWrongFields = (schema: Schema) => {
 export const setSchemaTypeAndRemoveWrongFields = _.flow([
   setSchemaType,
   removeWrongFields
+])
+
+export const setSchemaSensitiveForSelect = _.flow([
+  setSchemaSensitive
 ])
 
 export const translateLabels = (t: (text: string) => string, list: any[]) =>

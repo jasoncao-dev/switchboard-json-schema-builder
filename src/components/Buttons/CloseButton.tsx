@@ -14,7 +14,7 @@ const CloseButton: React.FunctionComponent<Props> = ({ onClick=_.noop, title }: 
     <RoundedButton
       onClick={onClick}
       title={title}
-      className='text-gray-800 bg-white hover:bg-gray-200'
+      className='text-gray-700 bg-white hover:bg-gray-200'
     >
       <FontAwesomeIcon icon={faTimes} />
     </RoundedButton>

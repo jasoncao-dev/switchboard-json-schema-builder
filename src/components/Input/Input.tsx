@@ -41,7 +41,7 @@ const Input: React.FunctionComponent<Props> = ({
         onKeyPress={handleEnterPress(onChangeValue)}
         onBlur={onChangeValue}
         placeholder={placeholder}
-        className='mt-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline-blue focus:ring-blue-500  focus:border-blue-500'
+        className='mt-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:ring-blue-500 focus:border-blue-500'
         disabled={disabled}
       />
     </div>

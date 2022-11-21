@@ -8,12 +8,19 @@ export type SchemaType =
   | 'array'
   | 'boolean'
 
+export type SensitiveType =
+  | 'acct'
+  | 'id'
+
 export type SchemaTypeOption = { value: SchemaType; label: string }
 
-export type CommonSchemaField = 'description' | 'sensitive'
+export type SensitiveOption = { value: SensitiveType; label: string | SensitiveType }
+
+export type CommonSchemaField = 'description' | 'title'
 
 export type StringSchemaField =
   | CommonSchemaField
+  | 'sensitive'
   | 'enum'
   | 'minLength'
   | 'maxLength'
@@ -36,6 +43,7 @@ export type ArraySchemaField =
   | 'uniqueItems'
   | 'minItems'
   | 'maxItems'
+  | 'flatten'
 
 export type SchemaFieldOptionType =
   | 'string'
@@ -45,7 +53,7 @@ export type SchemaFieldOptionType =
   | 'select'
   | 'required'
 
-export type CommonValidSchemaField = CommonSchemaField | 'title' | 'type' | 'sensitive'
+export type CommonValidSchemaField = CommonSchemaField | 'title' | 'type'
 export type StringValidSchemaField = StringSchemaField | CommonValidSchemaField
 export type NumberValidSchemaField = NumberSchemaField | CommonValidSchemaField
 export type IntegerValidSchemaField =

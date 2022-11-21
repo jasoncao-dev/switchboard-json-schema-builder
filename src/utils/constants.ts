@@ -16,8 +16,9 @@ import {
   SchemaType,
   SchemaTypeOption,
   StringSchemaFieldOption,
-  StringValidSchemaField
-} from './types'
+  StringValidSchemaField,
+  SensitiveOption
+} from "./types";
 
 export const defaultSchema: Schema = {
   type: 'object',
@@ -35,7 +36,7 @@ export const schemaTypes: SchemaTypeOption[] = [
   },
   {
     value: 'number',
-    label: 'schemaTypes.decimal',
+    label: 'schemaTypes.number',
   },
   {
     value: 'boolean',
@@ -51,10 +52,29 @@ export const schemaTypes: SchemaTypeOption[] = [
   }
 ]
 
+export const sensitiveOptions: SensitiveOption[] = [
+  {
+    value: 'acct',
+    label: 'sensitiveOptions.acct'
+  },
+  {
+    value: 'id',
+    label: 'sensitiveOptions.id'
+  }
+]
+
 export const formatOptions = [
   {
     value: 'date-time',
+    label: 'formatOptions.date-time',
+  },
+  {
+    value: 'date',
     label: 'formatOptions.date',
+  },
+  {
+    value: 'time',
+    label: 'formatOptions.time',
   },
   {
     value: 'email',
@@ -115,21 +135,17 @@ export const objectValidSchemaProperties: ObjectValidSchemaField[] = [
 
 const commonSchemaOptions: CommonSchemaFieldOption[] = [
   { value: 'description', label: 'description', type: 'string' },
+  { value: 'title', label: 'title', type: 'string' },
 ]
 
 export const stringSchemaOptions: StringSchemaFieldOption[] = [
   ...commonSchemaOptions,
-  { value: 'sensitive', label: 'sensitive', type: 'string' },
+  { value: 'sensitive', label: 'sensitive', type: 'select', optionList: sensitiveOptions },
   { value: 'minLength', label: 'requirement.minLength', type: 'number' },
   { value: 'maxLength', label: 'requirement.maxLength', type: 'number' },
   { value: 'enum', label: 'options', type: 'multi_creatable' },
   { value: 'pattern', label: 'pattern', type: 'string' },
-  {
-    value: 'format',
-    label: 'format',
-    type: 'select',
-    optionList: formatOptions
-  }
+  { value: 'format', label: 'format', type: 'select', optionList: formatOptions }
 ]
 
 export const numberSchemaOptions: NumberSchemaFieldOption[] = [
@@ -159,7 +175,8 @@ export const arraySchemaOptions: ArraySchemaFieldOption[] = [
   ...commonSchemaOptions,
   { value: 'minItems', label: 'requirement.minItems', type: 'number' },
   { value: 'maxItems', label: 'requirement.maxItems', type: 'number' },
-  { value: 'uniqueItems', label: 'requirement.uniqueItems', type: 'boolean' }
+  { value: 'uniqueItems', label: 'requirement.uniqueItems', type: 'boolean' },
+  { value: 'flatten', label: 'requirement.flatten', type: 'boolean' }
 ]
 
 export const typeToOptions: Record<SchemaType, SchemaMenuOption[]> = {

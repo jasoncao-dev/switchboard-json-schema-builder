@@ -10,7 +10,7 @@ import jsonSchema from './schema.json'
 const App = () => {
   const [schema, setSchema] = React.useState<Schema>(jsonSchema)
 
-  return <div className="mx-auto grid gap-4 grid-flow-col p-8">
+  return <div className="mx-auto grid gap-4 grid-flow-col p-8 text-base">
     <JSONSchemaBuilder locale={"en"} schema={schema} onChange={setSchema} />
     <JSONPretty data={schema}/>
   </div>

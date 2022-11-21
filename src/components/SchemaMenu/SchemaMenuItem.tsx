@@ -65,6 +65,14 @@ export const NumberItem: React.FunctionComponent<Props> = ({
   onChange
 }: Props) => {
   const { t } = useTranslation()
+  const parseValue = (number: string) => {
+    let str = '0.'
+    for (let i = 0; i < parseInt(number) - 1; i++) {
+      str += '0'
+    }
+    str += '1'
+    return str
+  }
 
   return (
     <Item
@@ -76,7 +84,7 @@ export const NumberItem: React.FunctionComponent<Props> = ({
         value={helpers.getSchemaField(field.value, schema) as string}
         onChange={(text) =>
           onChange(
-            helpers.setSchemaField(field.value, parseInt(text, 10), schema)
+            helpers.setSchemaField(field.value, parseValue(text), schema)
           )
         }
       />

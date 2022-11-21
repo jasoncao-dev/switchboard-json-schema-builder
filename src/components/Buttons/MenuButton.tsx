@@ -15,7 +15,7 @@ const MenuButton: React.FunctionComponent<Props> = ({ onClick=_.noop, title }: P
     <RoundedButton
       onClick={onClick}
       title={title}
-      className='text-gray-800 bg-white hover:bg-gray-200'
+      className='text-gray-700 bg-white hover:bg-gray-200'
     >
       <FontAwesomeIcon icon={faEllipsisV} />
     </RoundedButton>

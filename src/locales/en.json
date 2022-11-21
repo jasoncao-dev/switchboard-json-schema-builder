@@ -3,13 +3,19 @@
     "schemaTypes": {
         "string": "String",
         "integer": "Integer",
-        "decimal": "Decimal",
+        "number": "Number",
         "boolean": "Boolean",
         "object": "Object",
         "array": "Array"
     },
+  "sensitiveOptions": {
+    "acct": "acct",
+    "id": "id"
+  },
     "formatOptions": {
+        "date-time": "Date-Time",
         "date": "Date",
+        "time": "Time",
         "email": "Email",
         "hostname": "Hostname",
         "ipv4": "IPv4",
@@ -25,7 +31,8 @@
         "required": "Required fields",
         "minItems": "Min Items",
         "maxItems": "Max Items",
-        "uniqueItems": "Unique Items"
+        "uniqueItems": "Unique Items",
+      "flatten": "Flatten Array"
     },
     "description": "Description",
     "sensitive": "Sensitive",
